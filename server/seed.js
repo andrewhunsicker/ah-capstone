@@ -16,6 +16,7 @@ module.exports = {
     seed: (req, res) => {
         sequelize.query(`
         
+        DROP TABLE IF EXISTS users;
 
         create table users (
             user_id SERIAL PRIMARY KEY,
@@ -23,11 +24,9 @@ module.exports = {
            first_name VARCHAR(50),
            last_name VARCHAR(50),
            email VARCHAR(50),
-           password VARCHAR(50)
+           password VARCHAR(500)
         );
 
-        INSERT INTO users (username, first_name, last_name, email, password)
-        values ('ahunsicker888', 'andrew', 'hunsicker', 'ahunsicker888@gmail.com', 'Andrew888*');
         `)
         .then(() => {
             console.log(`DB seeded!`)

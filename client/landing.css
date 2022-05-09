@@ -1,3 +1,57 @@
 body {
-    background-color: rgb(64, 97, 91);
+    background-color:rgb(35, 36, 36);
+}
+button {
+    display: center;
+    background-color: black;
+    color: orangered;
+    border: whitesmoke;
+    border-radius: 12px;
+    border-color:whitesmoke;
+    border-style:solid;
+    
+}
+
+#register-form {
+    display: center;
+    background-color: black;
+    color: orangered;
+    border: whitesmoke;
+    border-radius: 12px;
+    border-color:whitesmoke;
+    border-style:solid;
+    text-align: center;
+
+}
+
+
+#login-form {
+   
+    background-color: black;
+    color: orangered;
+    border: whitesmoke;
+    border-radius: 12px;
+    border-color:whitesmoke;
+    border-style:solid;
+    text-align: center;
+}
+
+header {
+    background-color: black;
+    color: orangered;
+    border: whitesmoke;
+    border-radius: 12px;
+    border-color:whitesmoke;
+    border-style:solid;
+    text-align: center;
+}
+
+div {
+    background-color: black;
+    color: orangered;
+    border: whitesmoke;
+    border-radius: 12px;
+    border-color:whitesmoke;
+    border-style:solid;
+    text-align: center;
 }

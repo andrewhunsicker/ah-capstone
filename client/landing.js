@@ -4,13 +4,12 @@ const registerForm = document.querySelector('#register-form')
 
 const baseURL = `http://localhost:4004/api`
 
-const login = body => axios.post(`${baseURL}/login`, body).then( res => {
+const login = res => /*axios.post(`${baseURL}/login`, body)
+.then( res => */
+{
   createUserCard(res.data)
   location.href = 'http://127.0.0.1:5500/client/main.html'
-}).catch(err => {
-  console.log(err)
-  alert('password or username did not match.')
-})
+}
 
 const register = body => axios.post(`${baseURL}/register`, body).then(res => {
   createUserCard(res.data)
@@ -30,11 +29,12 @@ function loginSubmitHandler(e) {
     password: password.value
   }
   
-  login(bodyObj)
-
-    //  location.href = 'http://127.0.0.1:5500/client/main.html'
-
-  
+  axios.post(`http://localhost:4004/api/login`, bodyObj)
+  .then (res => {
+    console.log(res.data)
+    login(res)
+  })
+ 
   username.value = ''
   password.value = ''
 }
@@ -100,7 +100,10 @@ function registerSubmitHandler(e) {
   }
    if(regex1 && regex2 && regex3 && regex4 === true)
 
-  register(bodyObj)
+  axios.post(`http://localhost:4004/api/register`, bodyObj)
+  .then (res => {
+    console.log(res.data)
+  })
   
   username.value = ''
   email.value = ''
@@ -109,21 +112,8 @@ function registerSubmitHandler(e) {
   password.value = ''
   password2.value = ''
   
-  sequelize.query(`
-        
 
-  create table users (
-      user_id SERIAL PRIMARY KEY,
-      username VARCHAR(50),
-     first_name VARCHAR(50),
-     last_name VARCHAR(50),
-     email VARCHAR(50),
-     password VARCHAR(50)
-  );
-
-  INSERT INTO users (username, first_name, last_name, email, password)
-  values ('${username.value}', '${firstName.value}', '${lastName.value}', '${email.value}', '${password.value}');
-  `)
+ 
 
   }
 
@@ -149,10 +139,5 @@ function createUserCard(data) {
 
 
 loginForm.addEventListener('submit', loginSubmitHandler)
-//  let button = document.getElementById('loginBtn').addEventListener(`click`, (e) => {
-//    e.preventDefault(
-     
-//      location.href = 'http://127.0.0.1:5500/client/main.html'
-//    )
-// } )
+
 registerForm.addEventListener('submit', registerSubmitHandler)

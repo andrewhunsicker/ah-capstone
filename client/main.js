@@ -60,4 +60,3 @@ document.getElementById('XMR-monthly-button').addEventListener('click', moneroMo
 document.getElementById('logout-button').addEventListener('click', logout)
 
 //   JSON.stringify
-// API key: QNZDYIH04YHYPSUW
