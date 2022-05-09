@@ -47,12 +47,17 @@ document.getElementById('monero-monthly').appendChild(display)
 }
 )}
 
+const logout = () => {
+     location.href = 'http://127.0.0.1:5500/client/landing.html'
+}
+
 
 
 document.getElementById('XMR-ETH-button').addEventListener('click', moneroToEthereum)
 document.getElementById('XMR-BTC-button').addEventListener('click', moneroToBitcoin) 
 document.getElementById('XMR-USD-button').addEventListener('click', moneroToDollar)
 document.getElementById('XMR-monthly-button').addEventListener('click', moneroMonthly)
+document.getElementById('logout-button').addEventListener('click', logout)
 
 //   JSON.stringify
 // API key: QNZDYIH04YHYPSUW

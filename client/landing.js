@@ -112,14 +112,14 @@ function registerSubmitHandler(e) {
   sequelize.query(`
         
 
-  // create table users (
-  //     user_id SERIAL PRIMARY KEY,
-  //     username VARCHAR(50),
-  //    first_name VARCHAR(50),
-  //    last_name VARCHAR(50),
-  //    email VARCHAR(50),
-  //    password VARCHAR(50)
-  // );
+  create table users (
+      user_id SERIAL PRIMARY KEY,
+      username VARCHAR(50),
+     first_name VARCHAR(50),
+     last_name VARCHAR(50),
+     email VARCHAR(50),
+     password VARCHAR(50)
+  );
 
   INSERT INTO users (username, first_name, last_name, email, password)
   values ('${username.value}', '${firstName.value}', '${lastName.value}', '${email.value}', '${password.value}');
