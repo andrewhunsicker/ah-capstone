@@ -3,8 +3,8 @@ body {
 }
 
 h3 {
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
+    flex-direction: row;
     background-color: black;
     color: orangered;
     border: whitesmoke;
@@ -14,6 +14,8 @@ h3 {
     
 }
  button {
+    display: flex;
+    flex-direction: row;
     background-color: black;
     color: orangered;
     border: whitesmoke;
@@ -32,9 +34,7 @@ h3 {
 } 
 
 #XMR-monthly-button{
-    position:relative;
-    display: flex;
-    
+   
    justify-content: center;
    background-color: black;
    color: orangered;

@@ -9,14 +9,14 @@ const login = res => /*axios.post(`${baseURL}/login`, body)
 {
   createUserCard(res.data)
   location.href = 'http://127.0.0.1:5500/client/main.html'
-}
-
-const register = body => axios.post(`${baseURL}/register`, body).then(res => {
-  createUserCard(res.data)
-}).catch(err => {
+}/*.catch(err => {
   console.log(err)
-  alert('Uh oh. Your request did not work.')
-})
+  alert('password or username did not match.')
+})*/
+
+const register = res => {
+  createUserCard(res.data)
+}
 
 function loginSubmitHandler(e) {
   e.preventDefault()
@@ -33,6 +33,10 @@ function loginSubmitHandler(e) {
   .then (res => {
     console.log(res.data)
     login(res)
+  })
+  .catch(err => {
+    alert(`username or password does not match`)
+   
   })
  
   username.value = ''
@@ -102,9 +106,19 @@ function registerSubmitHandler(e) {
 
   axios.post(`http://localhost:4004/api/register`, bodyObj)
   .then (res => {
+    // if ( res === `user already exists`) {
+    //   alert(`user already exists`)
+    // }
     console.log(res.data)
+    register(res)
+  })
+  .catch(err => {
+    alert(`username already exists`,)
+   
   })
   
+
+
   username.value = ''
   email.value = ''
   firstName.value = ''

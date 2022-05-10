@@ -1,5 +1,6 @@
 body {
     background-color:rgb(35, 36, 36);
+    
 }
 button {
     display: center;
@@ -9,6 +10,7 @@ button {
     border-radius: 12px;
     border-color:whitesmoke;
     border-style:solid;
+    
     
 }
 
@@ -21,8 +23,10 @@ button {
     border-color:whitesmoke;
     border-style:solid;
     text-align: center;
+    
 
 }
+
 
 
 #login-form {
@@ -34,6 +38,7 @@ button {
     border-color:whitesmoke;
     border-style:solid;
     text-align: center;
+    
 }
 
 header {
@@ -44,6 +49,7 @@ header {
     border-color:whitesmoke;
     border-style:solid;
     text-align: center;
+    
 }
 
 div {
