@@ -34,36 +34,27 @@ module.exports = {
           
         }
 
-      }
+      }else{res.status(400).send("username or password does not match.")}
     })
    
-    res.status(400).send("username or password does not match.")
+    
   },
 
   register: async (req, res) => {
     const { username, email, firstName, lastName, password } = req.body
-        IF 
-        await sequelize.query(`
-       SELECT * FROM users WHERE username = '${username}';
-       `) 
-       BEGIN 
-       .then(res.status(400).send(`user already exists`))
-      END
-      // .then(dbRes => {
-      //   if (dbRes[0][0]) {
-      //     res.status(400).send(`user already exists`)
-         
-      //   } 
-      // })
-      ELSE
-      BEGIN
-      const salt = bcrypt.genSaltSync(15)
-      const pHash = bcrypt.hashSync(password, salt)
-      console.log(`password = ` + password)
-      console.log(`salt = ` + salt)
-      console.log(`phash = ` + pHash)
-        
-         sequelize.query(`
+    const salt = bcrypt.genSaltSync(15)
+    const pHash = bcrypt.hashSync(password, salt)
+    console.log(`password = ` + password)
+    console.log(`salt = ` + salt)
+    console.log(`phash = ` + pHash)
+     sequelize.query(`
+   SELECT * FROM users WHERE username = '${username}';
+   `) 
+      .then(dbRes => {
+        if (dbRes[0][0]) {
+         res.status(400).send(`user already exists`)
+        } else {
+        sequelize.query(`
         INSERT INTO users (username, first_name, last_name, email, password)
         values ('${username}', '${firstName}', '${lastName}', '${email}', '${pHash}')
         RETURNING *;
@@ -71,10 +62,11 @@ module.exports = {
         .then(dbRes => {
           console.log(dbRes[0][0])
           res.status(200).send(dbRes[0][0])
-        })
-        END
-        
- 
+        }
+        )
+   } })
+          
+      
   },
 }
 
