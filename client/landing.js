@@ -135,7 +135,8 @@ function createUserCard(data) {
   <p class="email">Email: ${data.email}</p>
  
   `
-  
+  alert(`success!`)
+
   
   userContainer.appendChild(userCard)
 }

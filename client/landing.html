@@ -6,10 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecurityBigTimeWatchingYou</title>
     <link rel="stylesheet" href="landing.css">
+    <style>
+        body{ margin: 0px; }
+        #bg{ width:100%; height: 100%; overflow: hidden;}
+        #login-form{ position:absolute; left:700px; top:250px; padding:30px; color:orangered; text-shadow:black 2px 2px;}
+        #register-form{ position:absolute; left:400px; top:450px; padding:30px; color:orangered; text-shadow:black 2px 2px;}
+        #header{z-index: 3; position:absolute; width:100%; top:0px; padding:30px; color:orangered; text-shadow:black 2px 2px;}
+       #bg-container{position:relative; z-index: 1;}
+       main{position:relative; z-index: 2;} 
+      
+       
+    
+        
+        
+        
+     
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Login or Register</h1>
+    <header id="header">
+        <h1>monero price check</h1>
     </header>
     <main>
 <br>
@@ -62,7 +78,7 @@
               <li class="lowercase">Must contain a lowercase letter</li>
               <li class="uppercase">Must contain an uppercase letter</li>
               <li class="special">Must contain a number or special character</li>
-              <button>Register</button>
+              <button id="regBtn">Register</button>
           </ul>
         </form>
         
@@ -70,10 +86,11 @@
 
   
     <section id="user-info"></section>
-
-    </main>
-
-    <script ' src="https://unpkg.com/axios/dist/axios.min.js "type='module'></script>
+</main>
+<div id="bg-container">
+<video id="bg" src="./video/monero.mp4" autoplay="true" loop="true" muted="true"></video>
+</div>
+    <script ' src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script  src="./landing.js" type='module'></script>
    
 </body>
