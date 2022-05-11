@@ -49,8 +49,7 @@ module.exports = {
     console.log(`phash = ` + pHash)
      sequelize.query(`
    SELECT * FROM users WHERE username = '${username}';
-   `) 
-      .then(dbRes => {
+   `).then(dbRes => {
         if (dbRes[0][0]) {
          res.status(400).send(`user already exists`)
         } else {
@@ -60,7 +59,6 @@ module.exports = {
         RETURNING *;
         `)
         .then(dbRes => {
-          console.log(dbRes[0][0])
           res.status(200).send(dbRes[0][0])
         }
         )

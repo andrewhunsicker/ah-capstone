@@ -102,22 +102,16 @@ function registerSubmitHandler(e) {
     lastName: lastName.value,
     password: password.value
   }
-   if(regex1 && regex2 && regex3 && regex4 === true)
+   if(regex1 && regex2 && regex3 && regex4 === true) 
 
   axios.post(`http://localhost:4004/api/register`, bodyObj)
   .then (res => {
-    // if ( res === `user already exists`) {
-    //   alert(`user already exists`)
-    // }
-    console.log(res.data)
+    
     register(res)
   })
-  .catch(err => {
-    alert(`username already exists`,)
-   
-  })
-  
-
+ .catch(err => {
+   alert (`username in use`)
+ })
 
   username.value = ''
   email.value = ''
@@ -126,8 +120,6 @@ function registerSubmitHandler(e) {
   password.value = ''
   password2.value = ''
   
-
- 
 
   }
 
@@ -141,8 +133,7 @@ function createUserCard(data) {
   
   userCard.innerHTML = `<p class="username">username: ${data.username}</p>
   <p class="email">Email: ${data.email}</p>
-  <p class="first-name">First Name: ${data.firstName}</p>
-  <p class="last-name">Last Name: ${data.lastName}</p>
+ 
   `
   
   
