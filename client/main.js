@@ -2,7 +2,7 @@
 import {apiKey} from './config.js'
 
 const moneroToBitcoin = () => {
-     console.log(apiKey)
+     console.log(`hello there`)
 axios.get(`https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=XMR&to_currency=BTC&apikey=${apiKey}`)
 .then(res => {
      let display = document.createElement('h3')
