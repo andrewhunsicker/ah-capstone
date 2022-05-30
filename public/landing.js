@@ -7,7 +7,7 @@ const registerForm = document.querySelector('#register-form')
 const login = res => 
 {
   createUserCard(res.data)
-  location.href = 'http://localhost:4004/client'
+  location.href = 'http://localhost:4004/public'
 }
 
 const register = res => {
