@@ -2,17 +2,13 @@ const userContainer = document.querySelector('#user-info')
 const loginForm = document.querySelector('#login-form')
 const registerForm = document.querySelector('#register-form')
 
-const baseURL = `http://localhost:4004/api`
+// const baseURL = `http://localhost:4004/api`
 
-const login = res => /*axios.post(`${baseURL}/login`, body)
-.then( res => */
+const login = res => 
 {
   createUserCard(res.data)
-  location.href = 'http://127.0.0.1:5500/client/main.html'
-}/*.catch(err => {
-  console.log(err)
-  alert('password or username did not match.')
-})*/
+  location.href = 'http://localhost:4004/client'
+}
 
 const register = res => {
   createUserCard(res.data)

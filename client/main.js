@@ -50,7 +50,7 @@ document.getElementById('monero-monthly').appendChild(display)
 )}
 
 const logout = () => {
-     location.href = 'http://127.0.0.1:5500/client/landing.html'
+     location.href = 'http://localhost:4004/logout'
 }
 
 
