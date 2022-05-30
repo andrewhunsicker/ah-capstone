@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const Sequelize = require('sequelize')
+const path = require('path')
 
 const {CONNECTION_STRING} =process.env
 
@@ -14,7 +15,6 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 })
 
 const express = require('express')
-const path = require('path')
 const cors = require('cors')
 const {seed} = require('./seed.js')
 const {SERVER_PORT} = process.env
